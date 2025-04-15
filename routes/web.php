@@ -80,17 +80,17 @@ Route::get('animals', function(){
 })->name('animals');
 
 Route::group(['as'=> 'animals.', 'prefix' => 'animals'], function(){
-    Route::get('anjing', function(){
+    Route::get('dog', function(){
         return 'guk-guk!';
-    })->name('dog');
+    })->name('anjing');
 
-    Route::get('kucing', function(){
+    Route::get('cat', function(){
         return 'miaw!';
-    })->name('cat');
+    })->name('kucing');
 
-    Route::get('monyet', function(){
+    Route::get('monkey', function(){
         return 'ho ho!';
-    })->name('monkey');
+    })->name('monyet');
 });
 
 Route::get('blade-test', function() {
