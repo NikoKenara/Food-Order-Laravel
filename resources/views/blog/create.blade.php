@@ -10,26 +10,30 @@
             <form>
                 <div class="form-group mb-3">
                   <label class="form-label">Category</label>
-                  <select name="" id="" class="form-control">
-                    <option value="">Tech</option>
+                  <select name="category" id="" class="form-control">
+                    <option value="">Select</option>
+                    @foreach ($categories as $categories)
+
+                    <option value="">{{ $categories->name }}</option>
+                    @endforeach
                     </select>
 
                 </div>
                 <div class="form-group mb-3">
                   <label class="form-label">Title</label>
-                  <input type="text" class="form-control" id="">
+                  <input type="text" class="form-control" id="" name="title">
                 </div>
 
                 <div class="form-group mb-3">
                     <label class="form-label">Body</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="body" id="" cols="30" rows="10" class="form-control"></textarea>
                   </div>
 
                   <div class="form-group mb-3">
                     <label class="form-label">Status</label>
-                    <select name="" id="" class="form-control">
-                      <option value="">Show</option>
-                      <option value="">Show</option>
+                    <select name="status" id="" class="form-control">
+                      <option value="1">Show</option>
+                      <option value="0">Hide</option>
                       </select>
 
                   </div>

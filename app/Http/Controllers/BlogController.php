@@ -54,7 +54,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        $categories = Category::all();
+
+        return view('blog.create', compact('categories'));
     }
 
     /**
