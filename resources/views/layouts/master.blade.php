@@ -4,24 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <h2>MASTER</h2>
-        <ul>
-            <li>
-                <a href="{{ route('blade-test') }}">Home</a>
-                <a href="{{ route('contact') }}">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
     @yield('content')
 
-    <footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></script>
 
-        <h2>Footer</h2>
-    </footer>
 </body>
 </html>

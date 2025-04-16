@@ -44,9 +44,9 @@ class BlogController extends Controller
         // }
         //return $blog;
 
-        $category = Category::with('blogs')->find(1);
+        // $category = Category::with('blogs')->find(1);
 
-        return $category;
+        // return $category;
     }
 
     /**
@@ -54,7 +54,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.create');
     }
 
     /**
