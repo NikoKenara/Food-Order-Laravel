@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('about', function(){
     // return 'ini abotu page';
@@ -101,4 +101,4 @@ Route::get('contact', [TestControl::class, 'contact'])->name('contact');
 Route::get('contact/store', [TestControl::class, 'store'])->name('contact.store');
 
 
-Route::resource('blog', BlogController::class);
+Route::resource('blog', BlogController::class)->middleware('auth.check');
