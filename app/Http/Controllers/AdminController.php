@@ -20,4 +20,13 @@ class AdminController extends Controller
     public function dashboard(){
         return view('admin-dashboard');
     }
+
+    public function logout(){
+        Auth::guard('admin')->logout();
+        // $request->session()->invalidate();
+        // $request->session()->regenerateToken();
+
+        return redirect()->route('admin.login.index');
+
+    }
 }

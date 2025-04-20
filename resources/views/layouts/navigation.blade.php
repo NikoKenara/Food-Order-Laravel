@@ -38,20 +38,34 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        {{-- <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
-                        </x-dropdown-link>
+                        </x-dropdown-link> --}}
 
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                        @if (Auth::guard('admin')->check())
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
+                    <x-responsive-nav-link :href="route('admin.logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+
+                @else
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+
+                @endif
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -90,11 +104,23 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
+                {{-- <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
-                </x-responsive-nav-link>
+                </x-responsive-nav-link> --}}
 
                 <!-- Authentication -->
+                @if (Auth::guard('admin')->check())
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('admin.logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+
+                @else
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
@@ -104,6 +130,9 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+
+                @endif
+
             </div>
         </div>
     </div>
