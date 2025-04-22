@@ -10,11 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ $dataTable->table() }}
+
                 </div>
             </div>
         </div>
     </div>
 
     {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-
 </x-app-layout>

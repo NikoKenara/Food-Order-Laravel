@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function(UsersDataTable $dataTable) {
+Route::get('/dashboard', function (UsersDataTable $dataTable) {
     return $dataTable->render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
