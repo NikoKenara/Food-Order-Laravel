@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboard', function() {
+    $users = User::paginate(10);
+    return view('dashboard', compact('users'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
