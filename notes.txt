@@ -1,0 +1,3 @@
+Environment setup (24/04/25) :
+    1. VSCode extention setup
+    2. VSCode terminal environment setup (from basic terminal to Cmder)
